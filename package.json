@@ -1,0 +1,23 @@
+{
+    "name": "module-federation-vue3-vite-demo",
+    "private": true,
+    "version": "1.0.0",
+    "workspaces": [
+      "home-app",
+      "remote-app-green",
+      "remote-app-red"
+    ],
+    "scripts": {
+      "start": "yarn workspace start",
+      "build": "yarn workspace build ",
+      "serve": "yarn workspace serve ",
+      "restart": "yarn stop & yarn build & yarn serve",
+      "stop": "kill-port --port 3000,3001,3002",
+      "clean": "yarn clean"
+    },
+    "devDependencies": {
+      "@originjs/vite-plugin-federation": "workspace:*",
+      "kill-port": "^2.0.1",
+      "vite-plugin-css-injected-by-js": "^3.0.1"
+    }
+  }
